@@ -2872,6 +2872,52 @@ let EXPERIENCES = {
       function: sendNotificationScavenger.toString()
     }]
   },
+  valentinesHunt: {
+    _id: Random.id(),
+    name: 'Valentine\'s Day Scavenger Hunt',
+    participateTemplate: 'scavengerHuntParticipate',
+    resultsTemplate: 'scavengerHunt',
+    contributionTypes: [{
+      needName: 'chocolate',
+      situation: {
+        detector: DETECTORS.grocery._id,
+        number: '1'
+      },
+      toPass: {
+        instruction: 'Can you take a photo of Valentine\'s Day chocolates?'
+      },
+      numberNeeded: 1,
+      notificationDelay: 10
+    }, {
+      needName: 'latte heART',
+      situation: {
+        detector: DETECTORS.coffee._id,
+        number: '1'
+      },
+      toPass: {
+        instruction: 'Can you take a photo of a latte with a heart in it?'
+      },
+      numberNeeded: 1,
+      notificationDelay: 10
+    }, {
+      needName: 'flowers',
+      situation: {
+        detector: DETECTORS.produce._id,
+        number: '1'
+      },
+      toPass: {
+        instruction: 'Can you take a photo of flowers?'
+      },
+      numberNeeded: 1,
+      notificationDelay: 10
+    }],
+    description: 'Find an item for a scavenger hunt',
+    notificationText: 'Help us out with our Valentine\'s Day scavenger hunt!',
+    callbacks: [{
+      trigger: 'cb.incidentFinished()',
+      function: sendNotificationScavenger.toString()
+    }]
+  },
   foodfight: {
     _id: Random.id(),
     name: "Food Fight!",

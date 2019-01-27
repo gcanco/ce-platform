@@ -78,6 +78,13 @@ Meteor.methods({
     let incident = createIncidentFromExperience(value);
     startRunningIncident(incident);
   },
+  startValentine(){
+    console.log("starting valentine");
+    let value = CONSTANTS.EXPERIENCES.valentinesHunt;
+    Experiences.insert(value);
+    let incident = createIncidentFromExperience(value);
+    startRunningIncident(incident);
+  }
 });
 
 function clearDatabase () {
